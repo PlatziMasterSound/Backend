@@ -19,7 +19,6 @@ class SignUpResource(Resource):
         data = request.get_json()
         data['password'] = generate_password_hash(data['password']).decode('utf8')
         user_dict = user_schema.load(data)
-        print('a')
         user = User(**user_dict)
         country = Country.get_by_id(user_dict['country_id'])
         user.country = country # Error

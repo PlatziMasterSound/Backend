@@ -16,6 +16,5 @@ api.add_resource(AlbumListResource, '/api/albums/new-releases', endpoint='albums
 api.add_resource(SongListResource, '/api/albums/<album_id>/songs', endpoint='songs_list_resource')
 api.add_resource(LoginResource, '/api/auth/login', endpoint='login_resource')
 api.add_resource(PlaylistListResource, '/api/playlists/user/<int:user_id>', endpoint='playlist_list_resource')
-api.add_resource(PlaylistResource , '/api/playlists/<int:playlist_id>/songs', endpoint='playlist_list_by_id_resource')
-api.add_resource(PlaylistResource, '/api/playlists/save', endpoint='playlist_save_resource')
+api.add_resource(PlaylistResource, '/api/playlists/<int:playlist_id>/songs', endpoint='playlist_list_by_id_resource')
 

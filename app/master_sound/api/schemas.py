@@ -49,7 +49,7 @@ class SongSchema(ma.Schema):
     duration = fields.String()
     sound_url = fields.String()
     order_number = fields.Integer()
-    album = fields.Nested('AlbumSchema')
+    album = fields.Nested('AlbumSchema', load_only=True)
 
 
 class PlaylistSchema(ma.Schema):

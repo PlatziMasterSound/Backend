@@ -3,9 +3,7 @@ from datetime import timedelta
 
 from flask import request, jsonify
 from flask_restful import Resource
-import requests
 
-from app.spotify_api import get_token
 from app.master_sound.models import Song, Album
 from app.common.error_handling import ObjectNotFound
 from app.master_sound.api.schemas import SongSchema

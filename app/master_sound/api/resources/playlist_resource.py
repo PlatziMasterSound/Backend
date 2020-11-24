@@ -16,7 +16,8 @@ class PlaylistListResource(Resource):
             raise ObjectNotFound('There was no user for the requested id.')
         playlists = Playlist.simple_filter(user_id=user_id, favourite=0)
         if not playlists:
-            raise ObjectNotFound('There were no playlists for the requested user.')
+            return None, 404
+            # raise ObjectNotFound('There were no playlists for the requested user.')
         results = playlist_schema.dump(playlists, many=True)
         return results, 200
 

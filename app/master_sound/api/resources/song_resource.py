@@ -12,8 +12,8 @@ song_schema = SongSchema(exclude=['album'])
 
 
 class SongListResource(Resource):
-    def get(self, album_id):
-        album = Album.simple_filter(spt_album_id=album_id)[0]
+    def get(self, spt_album_id):
+        album = Album.simple_filter(spt_album_id=spt_album_id)[0]
         if not album:
             raise ObjectNotFound('The requested album does not exist.')
         songs = album.songs

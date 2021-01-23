@@ -1,11 +1,18 @@
-JWT_SECRET_KEY = 't1NP63m4wnBg6nyHYKfmc2TpCOGI4nss'
+import os
 
-SECRET_KEY = '123447a47f563e90fe2db0f56b1b17be62378e31b7cfd3adc776c59ca4c75e2fc512c15f69bb38307d11d5d17a41a7936789' 
+JWT_SECRET_KEY = os.getenv('JWT_SECRET_KEY') 
+SECRET_KEY = os.getenv('SECRET_KEY') 
 
 PROPAGATE_EXCEPTIONS = True
 
 # Database config
-SQLALCHEMY_DATABASE_URI = 'mysql+mysqldb://back-user:backend@35.225.122.24/temp_test_ms?charset=utf8mb4'
+
+MYSQL_DB_USER = os.getenv('MYSQL_DB_USER')
+MYSQL_DB_PASSWD = os.getenv('MYSQL_DB_PASSWD')
+MYSQL_DB_IP = os.getenv('MYSQL_DB_IP')
+MYSQL_DB_NAME = os.getenv('MYSQL_DB_NAME')
+
+SQLALCHEMY_DATABASE_URI = f'mysql+mysqldb://{MYSQL_DB_USER}:{MYSQL_DB_PASSWD}@{MYSQL_DB_IP}/{MYSQL_DB_NAME}?charset=utf8mb4'
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 SHOW_SQLALCHEMY_LOG_MESSAGES = True
 

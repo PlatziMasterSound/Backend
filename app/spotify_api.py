@@ -10,7 +10,7 @@ def get_token():
     CLIENT_ID = 'aba92b636b61480c992f35aa022405f7'
     CLIENT_SECRET = '1d4db40d8e304d43bce78d5bea3d9751'
     client_str = f'{CLIENT_ID}:{CLIENT_SECRET}'
-    client_encode = base64.b64encode(client_str.encode('utf8'))
+    client_encode = base64.b64encode(client_str.encode('utf8')).decode()
     client_encode = str(client_encode, 'utf8')
     params = {'grant_type': 'client_credentials'}
     headers = {'Authorization': f'Basic {client_encode}'}

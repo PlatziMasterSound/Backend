@@ -66,7 +66,7 @@ class Album(db.Model, BaseModelMixin):
     album_id = db.Column(db.Integer, primary_key=True)
     cover_image_url = db.Column(db.String(100))
     spt_album_id = db.Column(db.String(30), nullable=False, unique=True)
-    album_name = db.Column(db.String(80), nullable=False)
+    album_name = db.Column(db.String(150), nullable=False)
     songs = db.relationship('Song', back_populates='album', cascade='all, delete, delete-orphan', passive_deletes=True)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)

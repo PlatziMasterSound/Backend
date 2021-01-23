@@ -27,7 +27,6 @@ class AlbumListResource(Resource):
             if Album.simple_filter(spt_album_id=_json['spt_album_id']):
                 print('Already on the database.')
                 continue
-            else:
             album = Album(cover_image_url=_json['cover_image_url'], spt_album_id=_json['spt_album_id'], album_name=_json['album_name'])
             for artist in _json['artists']:
                 try:
